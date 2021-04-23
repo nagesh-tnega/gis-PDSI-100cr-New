@@ -1,0 +1,66 @@
+<?php
+	/*
+Script Name: Read excel file in php with example
+Script URI: http://allitstuff.com/?p=1303
+Website URI: http://allitstuff.com/
+*/
+?>
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+</head>
+<body>
+<a href="#">AllItStuff.com</a>
+<?php
+
+
+
+require_once('class.phpmailer.php');
+$mail = new PHPMailer(); // create a new object
+$mail->IsSMTP(); // enable SMTP
+$mail->SMTPDebug = 1; // debugging: 1 = errors and messages, 2 = messages only
+$mail->SMTPAuth = true; // authentication enabled
+$mail->SMTPSecure = 'ssl'; // secure transfer enabled REQUIRED for GMail
+$mail->Host = "smtp.gmail.com";
+$mail->Port = 465; // or 587
+$mail->IsHTML(true);
+$mail->Username = "prdp.ice@gmail.com";
+$mail->Password = "prdp.home";
+$mail->SetFrom("example@gmail.com");
+$mail->Subject = "Test";
+$mail->Body = "Dear Winner,<br/><br/>
+
+Congratulations on playing and winning the prize(s) in Howsee! Play
+more and win more. There are special surprise prizes for the Top 10
+every week as well. Pl use the attached coupon code to book the ticket
+for a movie of your choice at your preferred theater in <u> www&middot;nomorequeue&middot;com
+
+<br/><br/>
+Prizes for claiming Ful Howsee1
+Coupon Code :
+<br/><br/>
+Congratulations and all the very best once again. Pl share your
+experience with your friends and relatives. Keep playing and enjoying,
+as we have lot more prizes and surprises waiting for you.
+<br/><br/>
+Note : To continuously receive our prizes add our mail id in your contact list.
+<br/><br/>
+ Yours truly<br/>
+ Howsee Team";
+$mail->AddAddress("pradeep@wifintech.com");
+
+ if(!$mail->Send())
+    {
+    echo "Mailer Error: " . $mail->ErrorInfo;
+    }
+    else
+    {
+    echo "Message has been sent";
+    }
+
+
+
+
+?>
+<body>
+</html>

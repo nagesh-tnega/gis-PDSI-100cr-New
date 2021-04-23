@@ -1,0 +1,29 @@
+
+CREATE TABLE public.departments
+(
+    id serial,
+    dept_code character varying COLLATE pg_catalog."default",
+    dept_name character varying COLLATE pg_catalog."default"
+)
+
+
+
+
+INSERT INTO public.departments(
+	dept_code, dept_name)
+	VALUES ('D10', 'Industries Department'),
+	('D20', 'Highways & Minor Ports Department'),
+	('D30', 'Housing & Urban Development Department'),
+	('D40', 'Public Works Department'),
+	('D50', 'Municipal Administration & Water Supply Department'),
+	('D60', 'Energy Department')
+	;
+
+ALTER table sp_index ADD dept_code character varying
+
+UPDATE sp_index SET dept_code='D60' where hod_name like 'D60_%'
+
+ALTER table departments ADD short_name character varying
+
+UPDATE departments SET short_name='Energy' where dept_code='D60'
+

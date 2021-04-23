@@ -1,0 +1,22 @@
+@charset "utf-8";
+
+*,
+*: before,
+*:after {
+    -webkit-box-sizing: border-box !important;
+    -moz-box-sizing: border-box !important;
+    box-sizing: border-box !important;
+}
+
+body {
+background:black;
+}
+#map{
+	width:100%;
+	height:87%;
+	padding-top:-30px;
+	margin-top:auto;
+	
+}
+
+
